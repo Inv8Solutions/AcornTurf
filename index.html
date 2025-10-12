@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Acorn Turf LLC</title>
+  <title>Acorn Brands Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,29 +15,29 @@
   </style> -->
 </head>
 <body class="max-w-full overflow-x-hidden">
-    <nav class="relative flex items-center justify-between px-4 md:px-10 py-4">
+    <nav class="relative flex items-center justify-between px-4 md:px-10 py-4 bg-[#015648]">
       <!-- Brand -->
-      <div class="text-[28px] md:text-[32px] font-bold text-[#015648]">Acorn Turf LLC</div>
+      <div class="text-[28px] md:text-[32px] font-bold text-[#2ECC71] ml-[20px]">Acorn <span class="text-white">Brands Academy</span></div>
 
       <!-- Desktop nav links -->
-      <ul class="hidden md:flex space-x-8 text-lg font-medium text-black">
-      <li>
-        <a href="#" class="hover:text-green-700 flex flex-col leading-tight">Home</a>
-      </li>
-      <li class="flex flex-col leading-tight">
-        <a href="#about" class="hover:text-green-700">About</a>
-      </li>
-      <li class="flex flex-col leading-tight">
-        <a href="#programs" class="hover:text-green-700">Programs</a>
-      </li>
-      <li class="flex flex-col leading-tight">
-        <a href="#success-stories" class="hover:text-green-700">Success Stories</a>
-      </li>
+      <ul class="hidden md:flex space-x-8 text-lg font-medium text-white z-20">
+        <li>
+          <a href="#" class="hover:text-green-700 flex flex-col leading-tight">Home</a>
+        </li>
+        <li class="flex flex-col leading-tight">
+          <a href="#about" class="hover:text-green-700">About</a>
+        </li>
+        <li class="flex flex-col leading-tight">
+          <a href="#programs" class="hover:text-green-700">Programs</a>
+        </li>
+        <li class="flex flex-col leading-tight">
+          <a href="#success-stories" class="hover:text-green-700">Success Stories</a>
+        </li>
       </ul>
 
       <!-- Desktop CTA (right) -->
       <div class="hidden md:block">
-      <a href="#" class="bg-[#015648] text-white px-6 py-3 text-lg rounded-full font-semibold shadow hover:bg-green-700 transition">Book a Call</a>
+      <a href="#" class="bg-[#2ECC71] text-white px-6 py-3 text-lg rounded-[16px] font-semibold shadow hover:bg-green-700 transition">Book Free Strategy Call</a>
       </div>
 
       <!-- Mobile controls: CTA beside hamburger (right) -->
@@ -90,7 +90,7 @@
 
       <!-- Optional small footer inside menu -->
       <div class="mt-auto px-6 py-4 border-t text-sm text-gray-500">
-      <div>© Acorn Turf LLC</div>
+      <div>© Acorn Brands Academy</div>
       </div>
     </aside>
 
@@ -151,27 +151,61 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="flex flex-col lg:flex-row items-center lg:items-center justify-between max-w-full mx-auto px-6 sm:px-10 lg:px-28 py-12 lg:py-16">
+    <section class="bg-[#015648] flex flex-col lg:flex-row items-center lg:items-center justify-between max-w-full mx-auto px-6 sm:px-10 lg:px-28 py-12 lg:py-16">
+      <div class="acorn-overlay " aria-hidden="true">
+        <img src="./src/acorn.png" alt="Acorn logo" class="acorn-img" />
+      </div>
+
+      <style>
+        /* make the hero section a positioning context and place the acorn image above the background */
+        section:first-of-type { position: relative; }
+
+        .acorn-overlay {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          pointer-events: none;
+          z-index: 10;
+        }
+
+        .acorn-img {
+          max-width: 60%;
+          width: auto;
+          height: auto;
+          opacity: .9;
+          object-fit: contain;
+          transform: translateY(-6%); /* nudge if needed */
+        }
+
+        /* ensure the text & other content that follows in the hero sits above the image */
+        .acorn-overlay ~ * {
+          position: relative;
+          z-index: 30;
+        }
+
+        /* responsive tweak */
+        @media (max-width: 768px) {
+          .acorn-img { max-width: 48%; transform: translateY(-4%); }
+        }
+      </style>
       <!-- Left: Text (center on mobile, left on desktop) -->
       <div class="flex-1 flex flex-col items-center lg:items-start justify-center space-y-6 text-center lg:text-left">
-  <h1 id="headline" class="text-[34px] sm:text-[40px] md:text-[56px] lg:text-[80px] font-semibold text-black leading-tight md:leading-[88px]">
+        <h1 id="headline" class="text-[34px] sm:text-[40px] md:text-[56px] lg:text-[80px] font-semibold text-white leading-tight md:leading-[88px]">
           Launch Your <br />
           Amazon Brand <br />
           in <span class="text-[#2ECC71]">90 Days</span>
         </h1>
 
-  <p id="subtext" class="text-base sm:text-lg md:text-2xl text-[#1E1E1E] max-w-xl">
+        <p id="subtext" class="text-base sm:text-lg md:text-2xl text-white max-w-xl">
           From overwhelmed to confident Amazon brand owner — with hands-on mentorship or done-for-you execution.
         </p>
 
         <div class="flex flex-row items-center sm:items-start sm:space-y-0 sm:space-x-6 gap-5">
-          <a href="#" class="bg-green-500 text-white px-8 py-3 rounded-full font-normal shadow hover:bg-green-600 transition flex items-center justify-center space-x-1">
+          <a href="#" class="bg-green-500 text-white px-8 py-3 rounded-[16px] font-normal shadow hover:bg-green-600 transition flex items-center justify-center space-x-1">
             <span>Book Free Call</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-
-          <a href="#" class="border border-gray-400 text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
-            Learn More
           </a>
         </div>
       </div>
@@ -410,18 +444,18 @@
 
         // initial load and keep in sync
         // call after a short idle so DOM is almost certainly parsed
-  setTimeout(loadTestimonialSlots, 60);
-  onSnapshot(collection(db, 'testimonials'), () => { console.debug('testimonials snapshot fired'); loadTestimonialSlots(); });
+        setTimeout(loadTestimonialSlots, 60);
+        onSnapshot(collection(db, 'testimonials'), () => { console.debug('testimonials snapshot fired'); loadTestimonialSlots(); });
       } catch (err) {
         console.warn('Testimonials loader failed:', err);
       }
     </script>
     
     <section class="relative max-w-full w-full">
-      <div class="bg-[#015648] text-white">
+      <div class="bg-[#2ECC71] text-white">
         <div class="mx-auto max-w-7xl px-4 sm:px-6">
           <div class="py-2 md:py-8 text-center">
-            <div id="social-subtext" class="text-[14px] md:text-[18px] text-white/70 font-normal">Trusted by 50+ successful Amazon Sellers worldwide</div>
+            <div id="" class="text-[14px] md:text-[18px] text-white font-normal">Trusted by 50+ successful Amazon Sellers worldwide</div>
           </div>
 
           <div class="py-2 md:py-6">
@@ -429,7 +463,7 @@
               <!-- Stat 1 -->
               <div class="px-2">
                 <div id="video" class="text-2xl md:text-[40px] font-bold">50+</div>
-                <div class="opacity-70 text-xs md:text-base mt-2 md:mt-4">Video Testimonials</div>
+                <div class="text-xs md:text-base mt-2 md:mt-4">Video Testimonials</div>
               </div>
 
               <!-- Divider -->
@@ -438,7 +472,7 @@
               <!-- Stat 2 -->
               <div class="px-2">
                 <div id="students" class="text-2xl md:text-[40px] font-bold">100+</div>
-                <div class="opacity-70 text-xs md:text-base mt-2 md:mt-4">Students Mentored</div>
+                <div class="text-xs md:text-base mt-2 md:mt-4">Students Mentored</div>
               </div>
 
               <!-- Divider -->
@@ -447,7 +481,7 @@
               <!-- Stat 3 -->
               <div class="px-2">
                 <div id="earnings" class="text-2xl md:text-[40px] font-bold">$7k–$15k</div>
-                <div class="opacity-70 text-xs md:text-base mt-2 md:mt-4">Avg Monthly Earnings</div>
+                <div class="text-xs md:text-base mt-2 md:mt-4">Avg Monthly Earnings</div>
               </div>
             </div>
           </div>
@@ -456,216 +490,118 @@
     </section>
 
     <!-- SECTION 03: TRANSFORM (Before/After + 6 cards) -->
-    <section id="about" class="relative bg-white rounded-t-[120px]">
-      <div class="absolute top-0 left-0 w-full h-[180px] bg-[#015648] rounded-b-[60px] -z-10"></div>
-      <div class="max-w-[1200px] mx-auto px-6 py-28">
-
-      <!-- Heading -->
-      <div class="text-center mb-16">
-        <h2 class="font-[Poppins] font-semibold text-[32px] md:text-[56px] leading-[60px] tracking-[0] text-center">
-        Let’s Transform Your <span class="text-[#2ECC71] block">Amazon Journey</span>
-        </h2>
-        <p class="mt-4 text-gray-600 max-w-[700px] mx-auto text-[14px] md:text-lg">
-        Stop struggling alone. Join entrepreneurs who've made the leap from confusion to clarity.
-        </p>
-      </div>
-
-      <!-- MOBILE: images with 2x2 card overlays on each image -->
-      <div class="lg:hidden space-y-20">
-        <!-- BEFORE image + overlay cards -->
-        <div class="relative">
-        <div class="overflow-hidden rounded-tl-[40px] rounded-bl-[160px] border-2 border-[#FF4555] h-[320px]">
-          <img src="./src/before.jpg" alt="Before" class="w-full h-full object-cover" />
+    <section id="about" class="relative bg-[#FAFAF6]">
+      <div class="max-w-full mx-auto px-6 py-20">
+        <!-- Heading -->
+        <div class="text-center mb-12">
+          <h2 class="font-[Poppins] font-semibold text-4xl md:text-6xl">
+            Let’s Transform Your <span class="text-[#2ECC71]"><br>Amazon Journey</span>
+          </h2>
+          <p class="mt-3 text-gray-600 max-w-2xl mx-auto text-2xl md:text-3xl">
+            Stop struggling alone. Join entrepreneurs who've made the leap from confusion to clarity.
+          </p>
         </div>
 
-        <!-- overlay cards (2x2) hovering on top of the image -->
-        <div class="absolute left-1/2 -translate-x-1/2 -bottom-20 w-[92%] z-20">
-          <div class="grid grid-cols-2 gap-4">
-          <div class="relative bg-red-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- Split hero image (rounded capsule with left=before, right=after) -->
+        <div class="mx-auto max-w-6xl overflow-visible">
+          <div class="flex flex-col lg:flex-row">
+            <!-- Before -->
+            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center">
+              <img src="./src/before.jpg" alt="Before" class="object-cover w-full h-full rounded-tl-[40px] rounded-bl-[160px] border-2 border-[#4F4F4F]" />
+              <div class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-[#99A1AF] px-8 py-4 rounded-[16px] text-[24px] font-regular text-white shadow text-center">Before</div>
             </div>
-            <p class="font-[Poppins] font-normal text-[14px] leading-[18px]">Overwhelmed, stuck, watching YouTube videos</p>
-          </div>
 
-          <div class="relative bg-red-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <!-- After -->
+            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center">
+              <img src="./src/after.jpg" alt="After" class="object-cover w-full h-full rounded-tr-[40px] rounded-br-[160px] border-2 border-[#2ECC71]" />
+              <div class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-[#2ECC71] px-8 py-4 rounded-[16px] text-[24px] font-regular text-white shadow text-center">After</div>
             </div>
-            <p class="font-[Poppins] font-normal text-[14px] leading-[18px]">False job security, fear of being laid off</p>
           </div>
+        </div>
 
-          <div class="relative bg-red-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <!-- Comparison rows (left = before pain, right = after gain) -->
+        <div class="mt-12 max-w-4xl mx-auto grid gap-6">
+          <!-- Row template: custom card pair -->
+          <div class="flex items-start gap-4 md:gap-6">
+            <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
+              <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">😵</div>
+              <div class="text-sm text-gray-700">Stuck watching tutorials, trapped in analysis paralysis</div>
             </div>
-            <p class="font-[Poppins] font-normal text-[14px] leading-[18px]">Stress, analysis paralysis</p>
-          </div>
 
-          <div class="relative bg-red-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flex items-center justify-center text-emerald-400 mt-5">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </div>
-            <p class="font-[Poppins] font-normal text-[14px] leading-[18px]">Trading time for a paycheck</p>
-          </div>
-          </div>
-        </div>
 
-          <div class="mt-6 text-center">
-            <span class="hidden md:inline-block bg-red-500 text-white text-[16px] font-medium px-4 py-2 rounded-xl shadow">Before</span>
-          </div>
-        </div>
-
-        <!-- VS center -->
-        <div class="flex justify-center">
-        <div class="w-16 h-16 bg-yellow-400 text-white rounded-full flex items-center justify-center font-semibold text-lg shadow">VS</div>
-        </div>
-
-        <!-- AFTER image + overlay cards -->
-        <div class="relative">
-        <div class="overflow-hidden rounded-tr-[40px] rounded-br-[160px] border-2 border-emerald-400 h-[320px]">
-          <img src="./src/after.jpg" alt="After" class="w-full h-full object-cover" />
-        </div>
-
-        <!-- overlay cards (2x2) hovering on top of the image -->
-        <div class="absolute left-1/2 -translate-x-1/2 -bottom-20 w-[92%] z-20">
-          <div class="grid grid-cols-2 gap-4">
-          <div class="relative bg-emerald-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="font-[Poppins] font-semibold text-[14px] leading-[18px]">Confident, clear roadmap, real sales</p>
-          </div>
-
-          <div class="relative bg-emerald-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="font-[Poppins] font-semibold text-[14px] leading-[18px]">Control over income, ownership of destiny</p>
-          </div>
-
-          <div class="relative bg-emerald-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="font-[Poppins] font-semibold text-[14px] leading-[18px]">Momentum, professional branding, live Amazon store</p>
-          </div>
-
-          <div class="relative bg-emerald-500 text-white rounded-[20px] p-4 shadow-md text-center">
-            <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mx-auto -mt-6 mb-2">
-            <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <p class="font-[Poppins] font-semibold text-[14px] leading-[18px]">Passive income & freedom to choose how to spend time</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="md:mt-6 text-center">
-          <span class="hidden md:inline-block bg-emerald-500 text-white text-[16px] font-medium px-4 py-2 rounded-xl shadow">After</span>
-        </div>
-        </div>
-      </div>
-
-      <!-- DESKTOP: original side-by-side with overlapping cards (hidden on mobile) -->
-      <div class="hidden lg:block relative">
-        <div class="relative flex justify-center items-start">
-        <!-- Images wrapper -->
-        <div class="relative flex items-start">
-          <!-- Before -->
-          <div class="relative w-[650px] h-[608px]">
-          <span class="absolute w-[120px] h-[48px] -top-[20px] left-1/2 -translate-x-1/2 bg-red-500 text-white text-[20px] font-medium leading-[24px] flex items-center justify-center rounded-xl shadow z-20">Before</span>
-          <div class="w-full h-full overflow-hidden rounded-tl-[40px] rounded-bl-[160px] border-2 border-[#FF4555]">
-            <img src="./src/before.jpg" class="w-full h-full object-cover" />
-          </div>
-          </div>
-
-          <!-- After -->
-          <div class="relative w-[650px] h-[608px]">
-          <span class="absolute w-[120px] h-[48px] -top-[20px] left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[20px] font-medium leading-[24px] flex items-center justify-center rounded-xl shadow z-20">After</span>
-          <div class="w-full h-full overflow-hidden rounded-tr-[40px] rounded-br-[160px] border-2 border-emerald-400">
-            <img src="./src/after.jpg" class="w-full h-full object-cover" />
-          </div>
-          </div>
-        </div>
-
-        <!-- Center vertical divider (circle) -->
-        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-          <div class="w-12 h-12 bg-yellow-400 text-white rounded-full flex items-center justify-center font-semibold">VS</div>
-        </div>
-
-        <!-- Overlapping cards: placed halfway down the images -->
-        <div class="absolute left-1/2 top-[62%] -translate-x-1/2 transform z-40 w-full max-w-[1380px] px-6">
-          <div class="flex justify-between items-start">
-          <!-- Left column (Before: red cards) -->
-          <div class="w-1/2 pr-8">
-            <div class="grid grid-cols-2 gap-6 mt-40">
-            <div class="relative bg-red-500 text-white rounded-[28px] rounded-bl-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flex-1 border-2 border-emerald-200 rounded-2xl p-4 bg-white">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-xl">✨</div>
+                <div class="text-sm text-emerald-800 font-medium">Clear roadmap, guided steps, and real results</div>
               </div>
-              <p class="font-[Poppins] font-normal text-[18px] leading-[26px] mt-10">Overwhelmed, stuck, watching YouTube videos</p>
-            </div>
-
-            <div class="relative bg-red-500 text-white rounded-[28px] rounded-bl-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-normal text-[18px] leading-[26px] mt-10">False job security, fear of being laid off</p>
-            </div>
-
-            <div class="relative bg-red-500 text-white rounded-[28px] rounded-bl-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-normal text-[18px] leading-[26px] mt-10">Stress, analysis paralysis</p>
-            </div>
-
-            <div class="relative bg-red-500 text-white rounded-[28px] rounded-bl-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-red-500" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-normal text-[18px] leading-[26px] mt-10">Trading time for a paycheck</p>
-            </div>
             </div>
           </div>
 
-          <!-- Right column (After: green cards 2x2 grid) -->
-          <div class="w-1/2 pl-8">
-            <div class="grid grid-cols-2 gap-6 mt-40">
-            <div class="relative bg-emerald-500 text-white rounded-[28px] rounded-br-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-semibold text-[18px] leading-[26px] mt-10">Confident, clear roadmap, real sales</p>
+          <div class="flex items-start gap-4 md:gap-6">
+            <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
+              <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">😟</div>
+              <div class="text-sm text-gray-700">Fear of layoffs and uncertain job security</div>
             </div>
 
-            <div class="relative bg-emerald-500 text-white rounded-[28px] rounded-br-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-semibold text-[18px] leading-[26px] mt-10">Control over income, ownership of destiny</p>
+            <div class="flex items-center justify-center text-emerald-400 mt-5">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </div>
 
-            <div class="relative bg-emerald-500 text-white rounded-[28px] rounded-br-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flex-1 border-2 border-emerald-200 rounded-2xl p-4 bg-white">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-xl">🚀</div>
+                <div class="text-sm text-emerald-800 font-medium">Launched Amazon store generating passive income</div>
               </div>
-              <p class="font-[Poppins] font-semibold text-[18px] leading-[26px] mt-14">Momentum, professional branding, live Amazon store</p>
-            </div>
-
-            <div class="relative bg-emerald-500 text-white rounded-[28px] rounded-br-[80px] w-full h-[180px] p-6 shadow-md flex items-center justify-center text-center">
-              <div class="absolute top-5 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              <svg class="w-5 h-5 text-emerald-500" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <p class="font-[Poppins] font-semibold text-[18px] leading-[26px] mt-10">Passive income & freedom to choose how to spend time</p>
-            </div>
             </div>
           </div>
+
+          <div class="flex items-start gap-4 md:gap-6">
+            <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
+              <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">🤔</div>
+              <div class="text-sm text-gray-700">No clear roadmap or accountability</div>
+            </div>
+
+            <div class="flex items-center justify-center text-emerald-400 mt-5">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex-1 border-2 border-emerald-200 rounded-2xl p-4 bg-white">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-xl">💪</div>
+                <div class="text-sm text-emerald-800 font-medium">Building a real asset you own</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4 md:gap-6">
+            <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
+              <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">⏳</div>
+              <div class="text-sm text-gray-700">Trading time for money with no ownership</div>
+            </div>
+
+            <div class="flex items-center justify-center text-emerald-400 mt-5">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex-1 border-2 border-emerald-200 rounded-2xl p-4 bg-white">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-xl">🎯</div>
+                <div class="text-sm text-emerald-800 font-medium">Income on your own terms, not someone else's</div>
+              </div>
+            </div>
           </div>
         </div>
-        </div><!-- end desktop relative -->
-      </div><!-- end desktop wrapper -->
-
       </div>
     </section>
 
@@ -910,7 +846,7 @@
   <!-- WHY CHOOSE US -->
   <section class="max-w-7xl mx-auto px-6 py-20 overflow-x-hidden">
       <div class="text-center mb-12">
-      <h2 class="text-[36px] md:text-[44px] font-semibold text-black">Why Choose <span class="text-[#2ECC71]">Acorn Turf LLC?</span></h2>
+      <h2 class="text-[36px] md:text-[44px] font-semibold text-black">Why Choose <span class="text-[#2ECC71]">Acorn Brands Academy?</span></h2>
       <p class="mt-3 text-gray-600 max-w-[800px] mx-auto">Real experience. Proven results. Your success is our mission.</p>
       </div>
 
@@ -1583,7 +1519,7 @@
     <footer class="bg-[#002F29] text-emerald-50 px-5">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-3">
             <div>
-                <div class="font-semibold text-[32px]">Acorn Turf LLC</div>
+                <div class="font-semibold text-[32px]">Acorn Brands Academy</div>
                 <p class="mt-2 text-emerald-100/80 text-[16px]">We empower aspiring entrepreneurs to launch and scale their own Amazon brands.</p>
                 <a href="#contact" class="mt-4 inline-flex rounded-full bg-[#2ECC71] px-4 py-2 text-white hover:bg-emerald-500">Book a Free Call →</a>
             </div>
@@ -1616,7 +1552,7 @@
             </div>
         </div>
         <div class="border-t border-white/70">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 text-xs text-emerald-100/70 text-center">© 2025 Acorn Turf LLC. All rights reserved · Privacy Policy · Terms of Service</div>
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 py-4 text-xs text-emerald-100/70 text-center">© 2025 Acorn Brands Academy. All rights reserved · Privacy Policy · Terms of Service</div>
         </div>
     </footer>
 <script src="/script/script.js"></script>
