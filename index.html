@@ -1191,23 +1191,215 @@
   
   <!-- ROAD MAP -->
   <section>
-    
+    <style>
+      /* hide scrollbars for the mobile carousel */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <!-- Heading -->
+      <div class="text-center">
+        <h2 class="text-[40px] md:text-[56px] font-extrabold leading-tight">The 90‑Day Roadmap</h2>
+        <p class="mt-2 text-slate-600 text-sm md:text-lg">
+          Get a preview of what you'll learn in our comprehensive Amazon FBA training program
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative mt-12">
+        <!-- connecting line (desktop only) -->
+        <div class="pointer-events-none absolute left-0 right-0 top-10 h-1 bg-[#2ECC71]/40 hidden md:block"></div>
+
+        <ul id="roadmap-track"
+            class="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-5 md:gap-6 md:overflow-visible md:snap-none"
+            role="region" aria-roledescription="carousel" aria-label="90-Day Roadmap" tabindex="0">
+          <!-- 1. Discover -->
+          <li class="shrink-0 snap-center w-[78%] max-w-[300px] md:w-auto md:max-w-none flex flex-col items-center text-center px-2">
+            <div class="z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white ring-2 ring-[#2ECC71] shadow-sm">
+              <i class="fa-solid fa-magnifying-glass text-[#2ECC71] text-xl md:text-2xl" aria-hidden="true"></i>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-[#2ECC71] mt-3"></span>
+            <span class="mt-2 inline-block rounded-full bg-emerald-50 text-emerald-700 text-[11px] md:text-xs px-3 py-1 ring-1 ring-emerald-200">Week 1‑2</span>
+            <h3 class="mt-3 font-semibold text-slate-900">Discover</h3>
+            <p class="mt-1 text-xs md:text-sm text-slate-600 max-w-[180px]">
+              Find your profitable product niche using proven research methods
+            </p>
+          </li>
+
+          <!-- 2. Validate -->
+          <li class="shrink-0 snap-center w-[78%] max-w-[300px] md:w-auto md:max-w-none flex flex-col items-center text-center px-2">
+            <div class="z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white ring-2 ring-[#2ECC71] shadow-sm">
+              <i class="fa-solid fa-bullseye text-[#2ECC71] text-xl md:text-2xl" aria-hidden="true"></i>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-[#2ECC71] mt-3"></span>
+            <span class="mt-2 inline-block rounded-full bg-emerald-50 text-emerald-700 text-[11px] md:text-xs px-3 py-1 ring-1 ring-emerald-200">Week 3‑4</span>
+            <h3 class="mt-3 font-semibold text-slate-900">Validate</h3>
+            <p class="mt-1 text-xs md:text-sm text-slate-600 max-w-[180px]">
+              Confirm market demand and competition analysis
+            </p>
+          </li>
+
+          <!-- 3. Build (highlight) -->
+          <li class="shrink-0 snap-center w-[78%] max-w-[300px] md:w-auto md:max-w-none flex flex-col items-center text-center px-2">
+            <div class="z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#C2A13E] shadow-md">
+              <i class="fa-solid fa-hammer text-white text-xl md:text-2xl" aria-hidden="true"></i>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-[#2ECC71] mt-3"></span>
+            <span class="mt-2 inline-block rounded-full bg-emerald-50 text-emerald-700 text-[11px] md:text-xs px-3 py-1 ring-1 ring-emerald-200">Week 5‑8</span>
+            <h3 class="mt-3 font-semibold text-slate-900">Build</h3>
+            <p class="mt-1 text-xs md:text-sm text-slate-600 max-w-[200px]">
+              Source suppliers, create brand identity, and finalize product
+            </p>
+          </li>
+
+          <!-- 4. Launch -->
+          <li class="shrink-0 snap-center w-[78%] max-w-[300px] md:w-auto md:max-w-none flex flex-col items-center text-center px-2">
+            <div class="z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white ring-2 ring-[#2ECC71] shadow-sm">
+              <i class="fa-solid fa-rocket text-[#2ECC71] text-xl md:text-2xl" aria-hidden="true"></i>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-[#2ECC71] mt-3"></span>
+            <span class="mt-2 inline-block rounded-full bg-emerald-50 text-emerald-700 text-[11px] md:text-xs px-3 py-1 ring-1 ring-emerald-200">Week 9‑11</span>
+            <h3 class="mt-3 font-semibold text-slate-900">Launch</h3>
+            <p class="mt-1 text-xs md:text-sm text-slate-600 max-w-[200px]">
+              Optimize listings, execute launch strategy, get first sales
+            </p>
+          </li>
+
+          <!-- 5. Scale -->
+          <li class="shrink-0 snap-center w-[78%] max-w-[300px] md:w-auto md:max-w-none flex flex-col items-center text-center px-2">
+            <div class="z-10 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-white ring-2 ring-[#2ECC71] shadow-sm">
+              <i class="fa-solid fa-chart-line text-[#2ECC71] text-xl md:text-2xl" aria-hidden="true"></i>
+            </div>
+            <span class="w-2 h-2 rounded-full bg-[#2ECC71] mt-3"></span>
+            <span class="mt-2 inline-block rounded-full bg-emerald-50 text-emerald-700 text-[11px] md:text-xs px-3 py-1 ring-1 ring-emerald-200">Week 12+</span>
+            <h3 class="mt-3 font-semibold text-slate-900">Scale</h3>
+            <p class="mt-1 text-xs md:text-sm text-slate-600 max-w-[200px]">
+              Optimize performance, expand product line, increase revenue
+            </p>
+          </li>
+        </ul>
+
+        <!-- Mobile controls -->
+        <div class="mt-6 flex items-center justify-center gap-3 md:hidden">
+          <button id="roadmap-prev" class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center ring-1 ring-emerald-100">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div id="roadmap-dots" class="flex items-center gap-2" aria-hidden="true">
+            <span data-i="0" class="w-2 h-2 rounded-full bg-[#2ECC71] scale-110 transition"></span>
+            <span data-i="1" class="w-2 h-2 rounded-full bg-emerald-200"></span>
+            <span data-i="2" class="w-2 h-2 rounded-full bg-emerald-200"></span>
+            <span data-i="3" class="w-2 h-2 rounded-full bg-emerald-200"></span>
+            <span data-i="4" class="w-2 h-2 rounded-full bg-emerald-200"></span>
+          </div>
+          <button id="roadmap-next" class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center ring-1 ring-emerald-100">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const track = document.getElementById('roadmap-track');
+        if (!track) return;
+        const items = Array.from(track.children);
+        const prev = document.getElementById('roadmap-prev');
+        const next = document.getElementById('roadmap-next');
+        const dotsWrap = document.getElementById('roadmap-dots');
+        const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll('span')) : [];
+
+        let active = 0;
+        let ticking = false;
+
+        function centerOf(el) {
+          return el.offsetLeft + el.offsetWidth / 2;
+        }
+
+        function trackCenter() {
+          return track.scrollLeft + track.clientWidth / 2;
+        }
+
+        function setActive(i) {
+          active = Math.max(0, Math.min(items.length - 1, i));
+          dots.forEach((d, idx) => {
+            if (idx === active) {
+              d.classList.add('bg-[#2ECC71]', 'scale-110');
+              d.classList.remove('bg-emerald-200');
+            } else {
+              d.classList.remove('bg-[#2ECC71]', 'scale-110');
+              d.classList.add('bg-emerald-200');
+            }
+          });
+        }
+
+        function scrollToIndex(i) {
+          i = Math.max(0, Math.min(items.length - 1, i));
+          const target = items[i];
+          const left = centerOf(target) - track.clientWidth / 2;
+          track.scrollTo({ left, behavior: 'smooth' });
+          setActive(i);
+        }
+
+        function onScroll() {
+          if (window.matchMedia('(min-width: 768px)').matches) return;
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              const c = trackCenter();
+              let nearest = 0;
+              let best = Infinity;
+              items.forEach((el, idx) => {
+                const dist = Math.abs(centerOf(el) - c);
+                if (dist < best) { best = dist; nearest = idx; }
+              });
+              setActive(nearest);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+
+        // Controls
+        prev && prev.addEventListener('click', () => scrollToIndex(active - 1));
+        next && next.addEventListener('click', () => scrollToIndex(active + 1));
+        dots.forEach((d) => d.addEventListener('click', () => {
+          const i = Number(d.getAttribute('data-i')) || 0;
+          scrollToIndex(i);
+        }));
+
+        // Keyboard support when track focused
+        track.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') { e.preventDefault(); scrollToIndex(active - 1); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); scrollToIndex(active + 1); }
+        });
+
+        track.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', () => setActive(active));
+
+        // Initialize
+        setActive(0);
+      })();
+    </script>
   </section>
 
   <!-- FAQ -->
     <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
-        <!-- Heading -->
-        <div class="text-center mb-10">
-            <h2 class="font-[Poppins] font-extrabold text-[48px] md:text-[64px] leading-[1.02]">
-                Frequently Asked <span class="text-[#2ECC71]">Questions</span>
-            </h2>
-            <p class="mt-3 text-gray-500 max-w-2xl mx-auto text-[24px]">
-                Get answers to the most common questions about our program.
-            </p>
-        </div>
+      <!-- Heading -->
+      <div class="text-center mb-10">
+          <h2 class="font-[Poppins] font-extrabold text-[48px] md:text-[64px] leading-[1.02]">
+              Frequently Asked <span class="text-[#2ECC71]">Questions</span>
+          </h2>
+          <p class="mt-3 text-gray-500 max-w-2xl mx-auto text-[24px]">
+              Get answers to the most common questions about our program.
+          </p>
+      </div>
 
-  <!-- FAQ list -->
-  <div id="faqs-list" class="space-y-4"></div>
+    <!-- FAQ list -->
+    <div id="faqs-list" class="space-y-4"></div>
 
         <!-- Dynamic FAQ renderer: listens to Firestore 'faqs' collection and renders items -->
         <script type="module">
@@ -1332,94 +1524,97 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="relative bg-[#015648] pb-20" aria-labelledby="contact-heading">
-        <!-- Top: heading on white -->
-        <div class="bg-white pt-12 pb-6 text-center">
-            <h2 id="contact-heading" class="text-[34px] md:text-[48px] font-extrabold text-slate-900">
-                Start Your Amazon Journey <span class="text-[#2ECC71]">Today</span>
-            </h2>
-            <p class="mt-3 text-sm md:text-base text-slate-600 max-w-2xl mx-auto">
-                Ready to transform your life? Fill out the form below and we'll be in touch within 24 hours.
-            </p>
+    <section id="contact" class="py-12">
+      <div class="mx-auto max-w-7xl px-6">
+      <!-- two-column card -->
+      <div class="grid lg:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl">
+        <!-- LEFT: green image panel with copy -->
+        <div class="relative bg-[#2ECC71]">
+        <img src="./src/office-unman.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#2ECC71]/90"></div>
+
+        <div class="relative z-10 p-8 md:p-12 lg:p-14 text-white">
+          <h2 class="text-[28px] md:text-[36px] lg:text-[42px] font-extrabold leading-tight">
+          Apply for Mentorship
+          </h2>
+          <p class="mt-3 text-sm md:text-base text-white/90 max-w-md">
+          Join a community of successful Amazon entrepreneurs who turned their business dreams into reality.
+          </p>
+
+          <ul class="mt-8 space-y-5 text-sm md:text-base">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-[#2ECC71]">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.707 5.293a1 1 0 010 1.414l-8.5 8.5a1 1 0 01-1.414 0l-3-3A1 1 0 015.207 11.4L7.5 13.69l7.793-7.793a1 1 0 011.414 0z"/></svg>
+            </span>
+            <span>Get a personalized roadmap for your Amazon business</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-[#2ECC71]">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.707 5.293a1 1 0 010 1.414l-8.5 8.5a1 1 0 01-1.414 0l-3-3A1 1 0 015.207 11.4L7.5 13.69l7.793-7.793a1 1 0 011.414 0z"/></svg>
+            </span>
+            <span>Access our proven frameworks and strategies</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 inline-flex w-6 h-6 items-center justify-center rounded-full bg-white text-[#2ECC71]">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.707 5.293a1 1 0 010 1.414l-8.5 8.5a1 1 0 01-1.414 0l-3-3A1 1 0 015.207 11.4L7.5 13.69l7.793-7.793a1 1 0 011.414 0z"/></svg>
+            </span>
+            <span>Connect with vetted service providers</span>
+          </li>
+          </ul>
+        </div>
         </div>
 
-        <!-- Green band to create the curved-background look -->
-        <div class="bg-white h-28 md:h-36 rounded-b-[120px] -mt-2 relative z-0 p-[200px]" aria-hidden="true"></div>
+        <!-- RIGHT: form card -->
+        <div class="bg-white p-6 md:p-8 lg:p-10">
+        <form class="space-y-5" method="post" action="#" novalidate>
+          <!-- name row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="firstName" class="block text-sm text-slate-700 mb-2">First Name</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required placeholder="Enter your first name"
+            class="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200">
+          </div>
+          <div>
+            <label for="lastName" class="block text-sm text-slate-700 mb-2">Last Name</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="Enter your last name"
+            class="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200">
+          </div>
+          </div>
 
-        <!-- Form card (overlapping the green band) -->
-        <div class="max-w-[820px] mx-auto px-6 ">
-            <div class="relative -mt-28 z-20 -mt-[350px] shadow-2xl rounded-[28px] bg-white p-5">
-                <form class="space-y-6" method="post" action="#" aria-labelledby="contact-heading" novalidate>
-                    <!-- name row -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label for="firstName" class="block text-sm text-slate-700 mb-2">First Name</label>
-                            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required placeholder="Enter your first name"
-                                class="w-full rounded-full border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200" />
-                        </div>
+          <!-- email -->
+          <div>
+          <label for="email" class="block text-sm text-slate-700 mb-2">Email Address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your email"
+            class="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200">
+          </div>
 
-                        <div>
-                            <label for="lastName" class="block text-sm text-slate-700 mb-2">Last Name</label>
-                            <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="Enter your last name"
-                                class="w-full rounded-full border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200" />
-                        </div>
-                    </div>
+          <!-- phone -->
+          <div>
+          <label for="phone" class="block text-sm text-slate-700 mb-2">Phone Number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Enter your phone number"
+            class="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200">
+          </div>
 
-                    <!-- email -->
-                    <div>
-                        <label for="email" class="block text-sm text-slate-700 mb-2">Email Address</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required placeholder="Enter your email"
-                            class="w-full rounded-full border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200" />
-                    </div>
+          <!-- goals -->
+          <div>
+          <label for="goals" class="block text-sm text-slate-700 mb-2">Tell us about your goals</label>
+          <textarea id="goals" name="goals" rows="4" placeholder="What are you hoping to achieve with Amazon FBA? Any specific questions or concerns?"
+            class="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200"></textarea>
+          </div>
 
-                    <!-- phone -->
-                    <div>
-                        <label for="phone" class="block text-sm text-slate-700 mb-2">Phone Number</label>
-                        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Enter your phone number"
-                            class="w-full rounded-full border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200" />
-                    </div>
-
-                    <!-- program interest -->
-                    <div>
-                        <label for="program" class="block text-sm text-slate-700 mb-2">Program Interest</label>
-                        <div class="relative">
-                            <select id="program" name="program" required
-                                class="appearance-none w-full rounded-full border border-gray-200 px-4 py-3 text-sm bg-white pr-10 focus:outline-none focus:ring-2 focus:ring-emerald-200">
-                                <option value="" disabled selected>Select a program</option>
-                                <option>Mentorship Program — $7,500</option>
-                                <option>Full-Service Program — $15,000</option>
-                            </select>
-                            <svg class="w-5 h-5 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"></svg>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- goals -->
-                    <div>
-                        <label for="goals" class="block text-sm text-slate-700 mb-2">Tell us about your goals</label>
-                        <textarea id="goals" name="goals" rows="4" placeholder="What are you hoping to achieve with Amazon FBA? Any specific questions or concerns?"
-                            class="w-full rounded-[14px] border border-gray-200 px-4 py-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-200"></textarea>
-                    </div>
-
-                    <!-- CTA -->
-                    <div class="flex justify-center">
-                        <button type="submit"
-                            class="inline-flex items-center bg-[#2ECC71] hover:bg-emerald-600 text-white px-6 md:px-8 py-3 rounded-full font-semibold shadow transition focus:outline-none focus:ring-2 focus:ring-emerald-300">
-                            <span>Start Your Amazon Journey</span>
-                            <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- subtle decorative rounded corners to mimic the design -->
-            <div class="hidden md:block absolute -bottom-10 left-0 right-0 pointer-events-none">
-                <div class="mx-auto w-full max-w-[820px] h-8 bg-transparent rounded-b-[28px]"></div>
-            </div>
+          <!-- CTA -->
+          <div class="pt-2"></div>
+          <button type="submit" class="w-full inline-flex items-center justify-center bg-[#2ECC71] hover:bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold shadow transition focus:outline-none focus:ring-2 focus:ring-emerald-300">
+            <span>Start Your Amazon Journey</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7M4 12h12"></path>
+            </svg>
+          </button>
+          </div>
+        </form>
         </div>
+      </div>
+      </div>
     </section>
 
     <!-- SECTION 12: FOOTER -->
