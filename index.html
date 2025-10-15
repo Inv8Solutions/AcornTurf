@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS (Animate On Scroll) Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <!-- <style>
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.active { opacity: 1; transform: none; }
@@ -192,17 +194,17 @@
       </style>
       <!-- Left: Text (center on mobile, left on desktop) -->
       <div class="flex-1 flex flex-col items-center lg:items-start justify-center space-y-6 text-center lg:text-left">
-        <h1 id="headline" class="text-[34px] sm:text-[40px] md:text-[56px] lg:text-[80px] font-semibold text-white leading-tight md:leading-[88px]">
+        <h1 id="headline" class="text-[34px] sm:text-[40px] md:text-[56px] lg:text-[80px] font-semibold text-white leading-tight md:leading-[88px]" data-aos="fade-right">
           Launch Your <br />
           Amazon Brand <br />
           in <span class="text-[#2ECC71]">90 Days</span>
         </h1>
 
-        <p id="subtext" class="text-base sm:text-lg md:text-2xl text-white max-w-xl">
+        <p id="subtext" class="text-base sm:text-lg md:text-2xl text-white max-w-xl" data-aos="fade-right" data-aos-delay="100">
           From overwhelmed to confident Amazon brand owner — with hands-on mentorship or done-for-you execution.
         </p>
 
-        <div class="flex flex-row items-center sm:items-start sm:space-y-0 sm:space-x-6 gap-5">
+        <div class="flex flex-row items-center sm:items-start sm:space-y-0 sm:space-x-6 gap-5" data-aos="fade-right" data-aos-delay="200">
           <a href="#" class="bg-green-500 text-white px-8 py-3 rounded-[16px] font-normal shadow hover:bg-green-600 transition flex items-center justify-center space-x-1">
             <span>Book Free Call</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -211,7 +213,7 @@
       </div>
 
       <!-- Right: Image (smaller on mobile, identical on lg) -->
-      <div class="flex-1 flex items-center justify-center mb-10 lg:mb-0 mt-5">
+      <div class="flex-1 flex items-center justify-center mb-10 lg:mb-0 mt-5" data-aos="fade-left" data-aos-delay="100">
         <div class="rounded-3xl w-[320px] sm:w-[420px] md:w-[480px] lg:w-[558px] h-[360px] sm:h-[480px] md:h-[560px] lg:h-[638px] flex items-center justify-center overflow-hidden">
           <img id="hero-image" src="./src/rectangle 7.jpg" alt="Business Woman" class="object-cover w-full h-full rounded-3xl rounded-bl-[160px]" />
         </div>
@@ -506,13 +508,13 @@
         <div class="mx-auto max-w-6xl overflow-visible">
           <div class="flex flex-col lg:flex-row">
             <!-- Before -->
-            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center">
+            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center" data-aos="fade-right">
               <img src="./src/before.jpg" alt="Before" class="object-cover w-full h-full rounded-tl-[40px] rounded-bl-[160px] border-2 border-[#4F4F4F]" />
               <div class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-[#99A1AF] px-8 py-4 rounded-[16px] text-[24px] font-regular text-white shadow text-center">Before</div>
             </div>
 
             <!-- After -->
-            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center">
+            <div class="relative lg:w-1/2 w-full h-[320px] lg:h-[420px] text-center" data-aos="fade-left">
               <img src="./src/after.jpg" alt="After" class="object-cover w-full h-full rounded-tr-[40px] rounded-br-[160px] border-2 border-[#2ECC71]" />
               <div class="absolute left-1/2 -bottom-6 -translate-x-1/2 bg-[#2ECC71] px-8 py-4 rounded-[16px] text-[24px] font-regular text-white shadow text-center">After</div>
             </div>
@@ -522,7 +524,7 @@
         <!-- Comparison rows (left = before pain, right = after gain) -->
         <div class="mt-12 max-w-4xl mx-auto grid gap-6">
           <!-- Row template: custom card pair -->
-          <div class="flex items-start gap-4 md:gap-6">
+          <div class="flex items-start gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="100">
             <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
               <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">😵</div>
               <div class="text-sm text-gray-700">Stuck watching tutorials, trapped in analysis paralysis</div>
@@ -542,7 +544,7 @@
             </div>
           </div>
 
-          <div class="flex items-start gap-4 md:gap-6">
+          <div class="flex items-start gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="200">
             <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
               <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">😟</div>
               <div class="text-sm text-gray-700">Fear of layoffs and uncertain job security</div>
@@ -562,7 +564,7 @@
             </div>
           </div>
 
-          <div class="flex items-start gap-4 md:gap-6">
+          <div class="flex items-start gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="300">
             <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
               <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">🤔</div>
               <div class="text-sm text-gray-700">No clear roadmap or accountability</div>
@@ -582,7 +584,7 @@
             </div>
           </div>
 
-          <div class="flex items-start gap-4 md:gap-6">
+          <div class="flex items-start gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="400">
             <div class="flex-1 bg-white rounded-2xl p-4 shadow border border-gray-100 flex items-center gap-4">
               <div class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-xl">⏳</div>
               <div class="text-sm text-gray-700">Trading time for money with no ownership</div>
@@ -608,7 +610,7 @@
     <section class="max-w-7xl mx-auto px-6 py-20">
       <div class="flex flex-col lg:flex-row items-center gap-12">
       <!-- Left: Portrait with badges -->
-      <div class="relative w-full lg:w-1/2 max-w-[640px]">
+      <div class="relative w-full lg:w-1/2 max-w-[640px]" data-aos="fade-right">
         <!-- Double-exposure effect using two copies of the same image -->
         <div class="relative w-full h-[640px] rounded-3xl overflow-hidden">
         <!-- Back layer (slightly shifted, darker) -->
@@ -660,7 +662,7 @@
       </div>
 
       <!-- Right: Copy, bullets, CTA -->
-      <div class="w-full lg:w-1/2 max-w-[700px]">
+      <div class="w-full lg:w-1/2 max-w-[700px]" data-aos="fade-left">
         <div class="max-w-[680px]">
         <span class="inline-block bg-[#C2A13E] text-white px-3 py-1 rounded-full text-sm font-medium mb-4">Meet Your Mentor</span>
 
@@ -719,7 +721,7 @@
     <section id="programs" class="py-20">
       <div class="max-w-full lg:w-[1200px] max-h-full h-[1083px] mx-auto px-6 rounded-[48px]" style="background-image: url('./src/Frame 39.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
         <div class="max-w-[1200px] mx-auto h-full flex flex-col items-center text-center px-6 pt-32">
-          <div class="text-center mb-16">
+          <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="font-[Poppins] font-semibold text-[56px] leading-[60px] tracking-[0] text-center">Choose Your <span class="text-[#2ECC71]">Path to Success</span></h2>
             <p class="mt-4 text-gray-600 max-w-[700px] mx-auto text-[24px]">
               Whether you want hands-on guidance or full-service support, we have a program designed for your journey.
@@ -728,7 +730,7 @@
 
           <div class="flex flex-col lg:flex-row items-start justify-center gap-8 w-full">
             <!-- Do-With-You (left) -->
-            <div id="package1form" class="relative bg-white rounded-2xl p-8 w-full max-w-[520px] shadow-xl border border-gray-100">
+            <div id="package1form" class="relative bg-white rounded-2xl p-8 w-full max-w-[520px] shadow-xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
               <!-- Top-right check badge -->
               <div class="absolute -top-4 right-6">
                 <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center border border-emerald-100 shadow-sm">
@@ -787,7 +789,7 @@
             </div>
 
             <!-- Done-For-You (right) -->
-            <div id="package2form" class="relative bg-white rounded-2xl p-8 w-full max-w-[520px] shadow-xl border-2 border-amber-200">
+            <div id="package2form" class="relative bg-white rounded-2xl p-8 w-full max-w-[520px] shadow-xl border-2 border-amber-200" data-aos="fade-up" data-aos-delay="200">
               <!-- top badge -->
               <div class="absolute -top-4 right-6">
                 <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center border border-amber-100 shadow-sm">
@@ -836,7 +838,7 @@
       <div class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-6">
           <!-- Heading -->
-          <div class="text-center">
+          <div class="text-center" data-aos="fade-up">
             <h2 class="text-[34px] md:text-[56px] font-extrabold leading-tight">
               Everything You Need to Launch — <span class="text-[#2ECC71]">Done Right</span>
             </h2>
@@ -848,7 +850,7 @@
           <!-- 3 Columns -->
           <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Col 1 -->
-            <div>
+            <div data-aos="fade-up" data-aos-delay="100">
               <div class="text-center">
                 <div class="flex items-center gap-3 mb-4 justify-center">
                   <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 ring-1 ring-emerald-100">
@@ -895,7 +897,7 @@
             </div>
 
             <!-- Col 2 -->
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
               <div class="flex items-center gap-3 mb-4 justify-center">
                 <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-50 text-amber-500 ring-1 ring-amber-100">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14l5-10 5 10H7zm-1 2h12l-6 6-6-6z"/></svg>
@@ -938,7 +940,7 @@
             </div>
 
             <!-- Col 3 -->
-            <div class="text-center">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
               <div class="flex items-center gap-3 mb-4 justify-center">
                 <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-50 text-emerald-500 ring-1 ring-emerald-100">
                   <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 12a8 8 0 11-8-8 6 6 0 008 8zm-9 8l-3-3h6l-3 3z"/></svg>
@@ -986,7 +988,7 @@
 
     <!-- TESTIMONIALS -->
   <section id="success-stories" class="max-w-7xl mx-auto px-6 py-20">
-    <div class="text-center mb-10">
+    <div class="text-center mb-10" data-aos="fade-up">
       <h2 class="text-[44px] md:text-[56px] font-semibold text-black">
         Real Results from <span class="text-[#2ECC71]">Real People</span>
       </h2>
@@ -998,7 +1000,7 @@
     <!-- Cards grid -->
     <div id="testimonials-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Card 1 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="100">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/office-unman.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1038,7 +1040,7 @@
       </article>
 
       <!-- Card 2 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/after.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1068,7 +1070,7 @@
       </article>
 
       <!-- Card 3 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="300">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/office-man.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1098,7 +1100,7 @@
       </article>
 
       <!-- Card 4 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="100">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/before.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1128,7 +1130,7 @@
       </article>
 
       <!-- Card 5 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="200">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/3.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1158,7 +1160,7 @@
       </article>
 
       <!-- Card 6 -->
-      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+      <article class="bg-white rounded-2xl p-6 shadow-md border border-gray-100" data-aos="fade-up" data-aos-delay="300">
         <div class="relative rounded-lg overflow-hidden bg-gray-100 h-44">
           <img src="./src/2.jpg" alt="Testimonial video cover" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-black/10" aria-hidden="true"></div>
@@ -1199,7 +1201,7 @@
 
     <div class="max-w-7xl mx-auto px-6 py-20">
       <!-- Heading -->
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <h2 class="text-[40px] md:text-[56px] font-extrabold leading-tight">The 90‑Day Roadmap</h2>
         <p class="mt-2 text-slate-600 text-sm md:text-lg">
           Get a preview of what you'll learn in our comprehensive Amazon FBA training program
@@ -1386,19 +1388,17 @@
     </script>
   </section>
 
-  <!-- FAQ -->
+    <!-- FAQ -->
     <section id="faq" class="max-w-5xl mx-auto px-6 py-20">
       <!-- Heading -->
-      <div class="text-center mb-10">
+      <div class="text-center mb-10" data-aos="fade-up">
           <h2 class="font-[Poppins] font-extrabold text-[48px] md:text-[64px] leading-[1.02]">
               Frequently Asked <span class="text-[#2ECC71]">Questions</span>
           </h2>
           <p class="mt-3 text-gray-500 max-w-2xl mx-auto text-[24px]">
               Get answers to the most common questions about our program.
           </p>
-      </div>
-
-    <!-- FAQ list -->
+      </div>    <!-- FAQ list -->
     <div id="faqs-list" class="space-y-4"></div>
 
         <!-- Dynamic FAQ renderer: listens to Firestore 'faqs' collection and renders items -->
@@ -1527,7 +1527,7 @@
     <section id="contact" class="py-12">
       <div class="mx-auto max-w-7xl px-6">
       <!-- two-column card -->
-      <div class="grid lg:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="grid lg:grid-cols-2 rounded-2xl overflow-hidden shadow-2xl" data-aos="fade-up">
         <!-- LEFT: green image panel with copy -->
         <div class="relative bg-[#2ECC71]">
         <img src="./src/office-unman.jpg" alt="" class="absolute inset-0 w-full h-full object-cover">
@@ -1658,6 +1658,16 @@
         </div>
     </footer>
 <script src="/script/script.js"></script>
+<!-- AOS (Animate On Scroll) Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    easing: 'ease-in-out',
+    once: false,
+    offset: 100
+  });
+</script>
 </body>
 </html>
 
