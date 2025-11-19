@@ -838,12 +838,22 @@
     }
     renderTestimonials();
     
-    // FAQ Management Section
+    // FAQ Management Section (Limited to 4 FAQs)
     async function renderFAQs() {
       const faqsList = document.getElementById('faqs-list');
       if (!faqsList) return;
       faqsList.innerHTML = '';
       const snap = await getDocs(collection(db, 'faqs'));
+      const faqCount = snap.size;
+      
+      // Add count indicator
+      if (faqCount > 0) {
+        const countDiv = document.createElement('div');
+        countDiv.className = 'mb-4 text-sm text-gray-600';
+        countDiv.textContent = `${faqCount} / 4 FAQs (Only first 4 will display on homepage)`;
+        faqsList.appendChild(countDiv);
+      }
+      
       snap.forEach(docSnap => {
         const data = docSnap.data();
         const faqId = docSnap.id;
@@ -950,7 +960,7 @@
         modal.style.display = 'none';
       };
     }
-    // Add FAQ
+    // Add FAQ (Limited to 4)
     const addFaqBtn = document.getElementById('faq-add-btn');
     if (addFaqBtn) {
       addFaqBtn.addEventListener('click', async () => {
@@ -960,6 +970,14 @@
           alert('Please enter both question and answer.');
           return;
         }
+        
+        // Check if already have 4 FAQs
+        const currentSnap = await getDocs(collection(db, 'faqs'));
+        if (currentSnap.size >= 4) {
+          alert('Maximum of 4 FAQs allowed. Please delete an existing FAQ before adding a new one.');
+          return;
+        }
+        
         await addDoc(collection(db, 'faqs'), { question, answer });
         document.getElementById('faq-question').value = '';
         document.getElementById('faq-answer').value = '';
