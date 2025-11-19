@@ -26,6 +26,62 @@
   const storage = getStorage(app);
 
   window.addEventListener('DOMContentLoaded', () => {
+    // Alert Banner Section
+    const alertBannerForm = document.getElementById('alertbannerform');
+    if (alertBannerForm) {
+      // Load existing data
+      getDocs(collection(db, 'alertBanner')).then((snap) => {
+        if (!snap.empty) {
+          const data = snap.docs[0].data();
+          const countdownInput = document.getElementById('countdown-end');
+          const slotsInput = document.getElementById('slots-remaining');
+          
+          if (data.countdownEndTime && countdownInput) {
+            const date = new Date(data.countdownEndTime);
+            const localDateTime = date.toISOString().slice(0, 16);
+            countdownInput.value = localDateTime;
+          }
+          if (data.slotsRemaining && slotsInput) {
+            slotsInput.value = data.slotsRemaining;
+          }
+        }
+      });
+
+      alertBannerForm.onsubmit = async function(e) {
+        e.preventDefault();
+        const countdownEnd = document.getElementById('countdown-end').value;
+        const slotsRemaining = document.getElementById('slots-remaining').value;
+
+        if (!countdownEnd || !slotsRemaining) {
+          alert('Please fill in all fields.');
+          return;
+        }
+
+        const loader = document.createElement('div');
+        loader.className = 'fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-30 z-50';
+        loader.innerHTML = '<div class="bg-white rounded-lg px-6 py-4 shadow text-lg font-semibold flex items-center"><svg class="animate-spin mr-2 h-6 w-6 text-[#21C97B]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Saving...</div>';
+        document.body.appendChild(loader);
+
+        try {
+          const alertBannerSnap = await getDocs(collection(db, "alertBanner"));
+          let docId = alertBannerSnap.empty ? "main" : alertBannerSnap.docs[0].id;
+
+          await setDoc(doc(db, "alertBanner", docId), {
+            countdownEndTime: new Date(countdownEnd).toISOString(),
+            slotsRemaining: parseInt(slotsRemaining),
+            updatedAt: new Date().toISOString()
+          });
+
+          document.body.removeChild(loader);
+          alert('Alert banner updated successfully!');
+        } catch (error) {
+          document.body.removeChild(loader);
+          console.error('Error updating alert banner:', error);
+          alert('Error updating alert banner. Check console.');
+        }
+      };
+    }
+
     // Hero Section
     
     let heroImageFile = null;

@@ -18,18 +18,28 @@
 </head>
 <body class="max-w-full overflow-x-hidden bg-[#015648]">
   
-    <!-- ALERT -->
-     <div class="h-[40px] bg-[#C2A13E]">
-        <div class="flex justify-left">
-          <div class=" px-10 mt-1 text-white font-medium">
-            enrollmet closes in
-          </div>
-          <div class="bg-white mt-1 px-3 py-1 rounded-full">
-            only 3 slots left
-          </div>
+    <!-- ALERT BANNER -->
+    <div class="relative bg-[#C2A13E] py-2 z-50">
+      <div class="max-w-full ml-[70px] mx-auto px-4 flex items-center justify-start gap-4 text-white text-sm font-medium">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-green-600 ring ring-white rounded-full animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="8"/>
+        </svg>
+          <span>Enrollment Closes in <span id="countdown-timer" class="font-bold">96:00:00</span></span>
         </div>
-     </div>
-    <nav class="relative flex items-center justify-between px-4 md:px-[70px] py-4 bg-[#015648] pt-[35px]">
+        <span class="hidden sm:inline">•</span>
+        <div class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-semibold">
+          Only <span id="slots-remaining">3</span> slots left
+        </div>
+      </div>
+    </div>
+
+    <!-- Acorn background overlay for nav + hero -->
+    <div class="fixed top-0 left-0 right-0 bottom-auto h-screen pointer-events-none z-0">
+      <img src="./src/acorn.png" alt="Acorn background" class="absolute inset-0 w-full h-full object-cover" />
+    </div>
+
+    <nav class="relative flex items-center justify-between px-4 md:px-[70px] py-4 pt-[35px] z-20">
       <!-- Brand -->
       <div class="text-[28px] md:text-[32px] font-bold text-[#2ECC71] ml-[20px]">Acorn <span class="text-white">Brands Academy</span></div>
 
@@ -168,69 +178,86 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="bg-[#015648] flex flex-col lg:flex-row items-center lg:items-center justify-between max-w-full mx-auto px-6 sm:px-10 lg:px-28 py-12 lg:py-16">
-      <div class="acorn-overlay " aria-hidden="true">
-        <img src="./src/acorn.png" alt="Acorn logo" class="acorn-img" />
-      </div>
+    <section class="relative bg-transparent max-w-full mx-auto px-6 sm:px-10 lg:px-28 py-12 lg:py-20 overflow-hidden z-20">
 
-      <style>
-        /* make the hero section a positioning context and place the acorn image above the background */
-        section:first-of-type { position: relative; }
+      <!-- Hero content -->
+      <div class="relative z-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-16">
+        <!-- Left: Text content -->
+        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 max-w-2xl">
+          <!-- Small tag -->
+          <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-white text-[16px] font-regular" data-aos="fade-right">
+            READY TO ESCAPE THE 9-TO-5?
+          </div>
 
-        .acorn-overlay {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          pointer-events: none;
-          z-index: 10;
-        }
+          <!-- Headline -->
+          <h1 id="headline" class="text-[42px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-bold text-white leading-[1.1]" data-aos="fade-right" data-aos-delay="100">
+            Launch Your<br />
+            Amazon Brand<br />
+            in <span class="text-[#2ECC71]">90 Days</span>
+          </h1>
 
-        .acorn-img {
-          max-width: 55%;
-          width: auto;
-          height: auto;
-          opacity: .9;
-          object-fit: contain;
-          transform: translateY(-6%);
-        }
+          <!-- Subtext -->
+          <p id="subtext" class="text-base sm:text-lg md:text-[18px] text-white/70 max-w-xl leading-relaxed" data-aos="fade-right" data-aos-delay="200">
+            The Acorn Method™ is the only repeatable blueprint that gets you from zero to a scalable, automated FBA brand.
+          </p>
 
-        /* ensure the text & other content that follows in the hero sits above the image */
-        .acorn-overlay ~ * {
-          position: relative;
-          z-index: 30;
-        }
+          <!-- CTA Button -->
+          <div class="flex flex-col sm:flex-row items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <a href="#" class="bg-[#2ECC71] text-white px-8 py-4 rounded-[16px] text-[16px] font-semibold shadow-lg hover:bg-[#26b361] transition flex items-center gap-2">
+              <span>Book Your Free 90-Day Blueprint Session</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
 
-        /* responsive tweak */
-        @media (max-width: 768px) {
-          .acorn-img { max-width: 48%; transform: translateY(-4%); }
-        }
-      </style>
-      <!-- Left: Text (center on mobile, left on desktop) -->
-      <div class="flex-1 flex flex-col items-center lg:items-start justify-center space-y-6 text-center lg:text-left">
-        <h1 id="" class="text-[34px] sm:text-[40px] md:text-[56px] lg:text-[80px] font-semibold text-white leading-tight md:leading-[88px]" data-aos="fade-right">
-          Launch Your <br />
-          Amazon Brand <br />
-          in <span class="text-[#2ECC71]">90 Days</span>
-        </h1>
+          <!-- Bottom info -->
+          <div class="flex flex-col sm:flex-row items-center gap-3 text-white/70 text-[16px]" data-aos="fade-right" data-aos-delay="400">
+            <p class="italic">Limited to serious applicants only. 100% Confidential.</p>
+          </div>
 
-        <p id="subtext" class="text-base sm:text-lg md:text-[20px] text-white max-w-xl" data-aos="fade-right" data-aos-delay="100">
-          Join over 100 students who built profitable Amazon stores through hands-on guidance, not another course.
-        </p>
-
-        <div class="flex flex-row items-center sm:items-start sm:space-y-0 sm:space-x-6 gap-5" data-aos="fade-right" data-aos-delay="200">
-          <a href="#" class="bg-green-500 text-white px-[40px] py-[24px] rounded-[16px] font-[18px] shadow hover:bg-green-600 transition flex items-center justify-center space-x-1">
-            <span>Book Free Strategy Call</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
+          <!-- Profile avatars -->
+          <div class="flex items-center gap-3" data-aos="fade-right" data-aos-delay="500">
+            <div class="flex -space-x-2">
+              <img src="./src/office-man.jpg" alt="Student" class="w-10 h-10 rounded-full border-2 border-[#015648] object-cover" />
+              <img src="./src/office-unman.jpg" alt="Student" class="w-10 h-10 rounded-full border-2 border-[#015648] object-cover" />
+              <img src="./src/after.jpg" alt="Student" class="w-10 h-10 rounded-full border-2 border-[#015648] object-cover" />
+              <img src="./src/before.jpg" alt="Student" class="w-10 h-10 rounded-full border-2 border-[#015648] object-cover" />
+              <img src="./src/2.jpg" alt="Student" class="w-10 h-10 rounded-full border-2 border-[#015648] object-cover" />
+            </div>
+            <p class="text-white font-regular text-[20px] opacity-70">100+ Students</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Right: Image (smaller on mobile, identical on lg) -->
-      <div class="flex-1 flex items-center justify-center mb-10 lg:mb-0 mt-5" data-aos="fade-left" data-aos-delay="100">
-        <div class="rounded-3xl w-[320px] sm:w-[420px] md:w-[480px] lg:w-[558px] h-[360px] sm:h-[480px] md:h-[560px] lg:h-[638px] flex items-center justify-center overflow-hidden">
-          <img id="hero-image" src="./src/rectangle 7.jpg" alt="Business Woman" class="object-cover w-full h-full rounded-3xl rounded-bl-[160px]" />
+        <!-- Right: Image with stat badges -->
+        <div class="relative flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="200">
+          <div class="relative w-[320px] sm:w-[400px] md:w-[460px] lg:w-[600px]">
+            
+            <!-- Main image container with white background -->
+            <div class="relative overflow-hidden">
+              <div class="flex gap-4 mb-6">
+                <!-- Stat badge: 100+ Students Mentored (top left) -->
+                <div class="flex-1 bg-[#015648] backdrop-blur-sm rounded-[24px] h-[200px] shadow-xl" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="flex items-center gap-3 mt-10 ml-5">
+                    <div class="text-white">
+                      <div class="text-[48px] font-bold leading-none">100+</div>
+                      <div class="text-[16px] font-regular opacity-90 mt-1 whitespace-nowrap">Students Mentored</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Stat badge: $7.5k+ Avg Student Monthly ROI (top right) -->
+                <div class="flex-1 bg-gradient-to-br from-[#D4AF37] to-[#C2A13E] backdrop-blur-sm rounded-[24px] h-[200px] shadow-xl" data-aos="zoom-in" data-aos-delay="500">
+                  <div class="text-white mt-10 mr-5 text-right">
+                    <div class="text-[48px] font-bold leading-none">$7.5k+</div>
+                    <div class="text-[16px] font-regular opacity-90 mt-1.5 whitespace-nowrap">Avg. Student Monthly ROI</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 bg-[#EBFEF7] backdrop-blur-sm rounded-[24px] h-[380px] shadow-xl" data-aos="zoom-in" data-aos-delay="500"></div>
+              
+              <!-- Hero image positioned on top with z-index -->
+              <img id="hero-image" src="./src/woman_hero.png" alt="Business Woman" class="absolute inset-0 w-[500px] h-auto object-cover z-10 pointer-events-none mt-5" />
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -260,9 +287,12 @@
         const subtextEl = document.getElementById('subtext');
         const imageEl = document.getElementById('hero-image');
 
-        if (headlineEl) {
+        if (headlineEl && data.headline) {
           // allow newlines saved from admin to render as <br>
-          headlineEl.innerHTML = (data.headline || '').replace(/\n/g, '<br/>');
+          // preserve the green "90 Days" span styling
+          let updatedHeadline = data.headline.replace(/\n/g, '<br/>');
+          updatedHeadline = updatedHeadline.replace(/90 Days/g, '<span class="text-[#2ECC71]">90 Days</span>');
+          headlineEl.innerHTML = updatedHeadline;
         }
         if (subtextEl) subtextEl.textContent = data.subtext || '';
         if (imageEl && data.imageUrl) imageEl.src = data.imageUrl;
@@ -1717,6 +1747,69 @@
     once: false,
     offset: 100
   });
+</script>
+
+<!-- Alert Banner Firebase Listener -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+  import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+  const firebaseConfigAlert = {
+    apiKey: "AIzaSyBGBimDkH4udFoX-xJ9knySaJdT400tYrc",
+    authDomain: "acornturf-70ddd.firebaseapp.com",
+    projectId: "acornturf-70ddd",
+    storageBucket: "acornturf-70ddd.firebasestorage.app",
+    messagingSenderId: "114396648312",
+    appId: "1:114396648312:web:f5ecd875c54eae5f256e8d",
+    measurementId: "G-RK524LV3RJ"
+  };
+
+  const appAlert = initializeApp(firebaseConfigAlert, 'alertApp');
+  const dbAlert = getFirestore(appAlert);
+
+  // Listen for alert banner updates
+  try {
+    onSnapshot(collection(dbAlert, 'alertBanner'), (snap) => {
+      if (!snap.empty) {
+        const data = snap.docs[0].data();
+        
+        // Update slots remaining
+        const slotsEl = document.getElementById('slots-remaining');
+        if (slotsEl && data.slotsRemaining) {
+          slotsEl.textContent = data.slotsRemaining;
+        }
+
+        // Update countdown timer
+        const timerEl = document.getElementById('countdown-timer');
+        if (timerEl && data.countdownEndTime) {
+          function updateCountdown() {
+            const now = new Date().getTime();
+            const end = new Date(data.countdownEndTime).getTime();
+            const distance = end - now;
+
+            if (distance < 0) {
+              timerEl.textContent = '00:00:00';
+              return;
+            }
+
+            const hours = Math.floor(distance / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timerEl.textContent = 
+              String(hours).padStart(2, '0') + ':' + 
+              String(minutes).padStart(2, '0') + ':' + 
+              String(seconds).padStart(2, '0');
+          }
+
+          updateCountdown();
+          setInterval(updateCountdown, 1000);
+        }
+      }
+    });
+  } catch (err) {
+    console.warn('Alert banner listener failed:', err);
+  }
 </script>
 </body>
 </html>
