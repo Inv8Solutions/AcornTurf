@@ -413,58 +413,58 @@
       };
     }
 
-    // Testimonials Management Section - Video Upload
-    let testimonialVideoFile = null;
-    const testimonialVideoUploadBtn = document.getElementById('videouploadbtn');
-    if (testimonialVideoUploadBtn) {
+    // Testimonials Management Section - Image Upload
+    let testimonialImageFile = null;
+    const testimonialImageUploadBtn = document.getElementById('imageuploadbtn');
+    if (testimonialImageUploadBtn) {
       const fileInput = document.createElement('input');
       fileInput.type = 'file';
-      fileInput.accept = 'video/*';
+      fileInput.accept = 'image/*';
       fileInput.style.display = 'none';
       document.body.appendChild(fileInput);
 
-      testimonialVideoUploadBtn.addEventListener('click', () => {
+      testimonialImageUploadBtn.addEventListener('click', () => {
         fileInput.click();
       });
 
       fileInput.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
-          testimonialVideoFile = file;
-          updateTestimonialVideoUploadUI('videouploaddrag', file.name, testimonialVideoUploadBtn);
+          testimonialImageFile = file;
+          updateTestimonialImageUploadUI('imageuploaddrag', file.name, testimonialImageUploadBtn);
         }
       });
     }
 
-    const testimonialVideoUploadDrag = document.getElementById('videouploaddrag');
-    if (testimonialVideoUploadDrag) {
-      testimonialVideoUploadDrag.addEventListener('dragover', (e) => {
+    const testimonialImageUploadDrag = document.getElementById('imageuploaddrag');
+    if (testimonialImageUploadDrag) {
+      testimonialImageUploadDrag.addEventListener('dragover', (e) => {
         e.preventDefault();
-        testimonialVideoUploadDrag.style.border = '2px dashed #4CAF50';
-        testimonialVideoUploadDrag.style.background = '#f0fff0';
+        testimonialImageUploadDrag.style.border = '2px dashed #4CAF50';
+        testimonialImageUploadDrag.style.background = '#f0fff0';
       });
 
-      testimonialVideoUploadDrag.addEventListener('dragleave', (e) => {
+      testimonialImageUploadDrag.addEventListener('dragleave', (e) => {
         e.preventDefault();
-        testimonialVideoUploadDrag.style.border = '';
-        testimonialVideoUploadDrag.style.background = '';
+        testimonialImageUploadDrag.style.border = '';
+        testimonialImageUploadDrag.style.background = '';
       });
 
-      testimonialVideoUploadDrag.addEventListener('drop', (e) => {
+      testimonialImageUploadDrag.addEventListener('drop', (e) => {
         e.preventDefault();
-        testimonialVideoUploadDrag.style.border = '';
-        testimonialVideoUploadDrag.style.background = '';
+        testimonialImageUploadDrag.style.border = '';
+        testimonialImageUploadDrag.style.background = '';
         const file = e.dataTransfer.files[0];
-        if (file && file.type.startsWith('video/')) {
-          testimonialVideoFile = file;
-          updateTestimonialVideoUploadUI('videouploaddrag', file.name, testimonialVideoUploadBtn);
+        if (file && file.type.startsWith('image/')) {
+          testimonialImageFile = file;
+          updateTestimonialImageUploadUI('imageuploaddrag', file.name, testimonialImageUploadBtn);
         } else {
-          alert('Please drop a valid video file.');
+          alert('Please drop a valid image file.');
         }
       });
     }
 
-    function updateTestimonialVideoUploadUI(dragId, filename, uploadBtn) {
+    function updateTestimonialImageUploadUI(dragId, filename, uploadBtn) {
       const dragDiv = document.getElementById(dragId);
       if (dragDiv) {
         dragDiv.innerHTML = '';
@@ -546,8 +546,8 @@
           s.classList.toggle('text-[#FFC107]', idx < testimonialRating);
           s.classList.toggle('text-gray-300', idx >= testimonialRating);
         });
-        testimonialVideoFile = null;
-        updateTestimonialVideoUploadUI('videouploaddrag', 'No file selected', document.getElementById('videouploadbtn'));
+        testimonialImageFile = null;
+        updateTestimonialImageUploadUI('imageuploaddrag', 'No file selected', document.getElementById('imageuploadbtn'));
         if (found) {
           const data = found.data();
           document.getElementById('testimonial-text').value = data.text || '';
@@ -559,11 +559,11 @@
             s.classList.toggle('text-[#FFC107]', idx < testimonialRating);
             s.classList.toggle('text-gray-300', idx >= testimonialRating);
           });
-          // If there's a videoUrl we show filename placeholder (no download)
-          if (data.videoUrl) {
-            const parts = data.videoUrl.split('/');
-            const last = parts[parts.length - 1] || 'video';
-            updateTestimonialVideoUploadUI('videouploaddrag', decodeURIComponent(last), document.getElementById('videouploadbtn'));
+          // If there's an imageUrl we show filename placeholder
+          if (data.imageUrl) {
+            const parts = data.imageUrl.split('/');
+            const last = parts[parts.length - 1] || 'image';
+            updateTestimonialImageUploadUI('imageuploaddrag', decodeURIComponent(last), document.getElementById('imageuploadbtn'));
           }
         }
       } catch (err) {
@@ -600,31 +600,41 @@
         const authorName = document.getElementById('author-name').value.trim();
         const authorTitle = document.getElementById('author-title').value.trim();
         const monthlyRevenue = document.getElementById('monthly-revenue').value.trim();
-        if (!text || !authorName || !authorTitle || !monthlyRevenue || !testimonialRating || !testimonialVideoFile) {
-          alert('Please fill in all fields, select a rating, and upload a video.');
+        if (!text || !authorName || !authorTitle || !monthlyRevenue || !testimonialRating) {
+          alert('Please fill in all fields and select a rating.');
           return;
         }
         const loader = document.createElement('div');
         loader.className = 'fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-30 z-50';
         loader.innerHTML = '<div class="bg-white rounded-lg px-6 py-4 shadow text-lg font-semibold flex items-center"><svg class="animate-spin mr-2 h-6 w-6 text-[#21C97B]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Saving...</div>';
         document.body.appendChild(loader);
-        let videoUrl = '';
-        if (testimonialVideoFile) {
-          const storageRef = ref(storage, `testimonials/videos/${Date.now()}_${testimonialVideoFile.name}`);
-          await uploadBytes(storageRef, testimonialVideoFile);
-          videoUrl = await getDownloadURL(storageRef);
+        
+        // Get existing data to preserve imageUrl if no new image uploaded
+        const existingSnap = await getDocs(collection(db, 'testimonials'));
+        const targetId = slotDocId(activeTestimonialSlot);
+        const existingDoc = existingSnap.docs.find(d => d.id === targetId);
+        let imageUrl = existingDoc?.data()?.imageUrl || '';
+        
+        // Upload new image if provided
+        if (testimonialImageFile) {
+          const storageRef = ref(storage, `testimonials/images/${Date.now()}_${testimonialImageFile.name}`);
+          await uploadBytes(storageRef, testimonialImageFile);
+          imageUrl = await getDownloadURL(storageRef);
         }
+        
         // Save to a specific slot doc
-        await setDoc(doc(db, 'testimonials', slotDocId(activeTestimonialSlot)), {
+        await setDoc(doc(db, 'testimonials', targetId), {
           text,
           authorName,
           authorTitle,
           monthlyRevenue,
           rating: testimonialRating,
-          videoUrl
+          imageUrl,
+          slotNumber: activeTestimonialSlot
         });
         document.body.removeChild(loader);
         alert('Testimonial saved!');
+        renderTestimonials();
       };
     }
 
@@ -707,25 +717,49 @@
       if (!testimonialsList) return;
       testimonialsList.innerHTML = '';
       const snap = await getDocs(collection(db, 'testimonials'));
+      
+      // Sort by slot number
+      const testimonials = [];
       snap.forEach(docSnap => {
         const data = docSnap.data();
-        const testimonialId = docSnap.id;
+        testimonials.push({
+          id: docSnap.id,
+          data,
+          slotNumber: data.slotNumber || parseInt(docSnap.id.replace('slot-', '')) || 0
+        });
+      });
+      testimonials.sort((a, b) => a.slotNumber - b.slotNumber);
+      
+      testimonials.forEach(({ id: testimonialId, data }) => {
         const wrapper = document.createElement('div');
-        wrapper.className = 'flex items-start gap-2';
+        wrapper.className = 'flex items-start gap-2 mb-4';
         const card = document.createElement('div');
-        card.className = 'rounded-xl border border-gray-300 p-4 flex flex-col gap-2 bg-white flex-1';
+        card.className = 'rounded-xl border border-gray-300 p-4 flex gap-4 bg-white flex-1';
+        
+        // Image preview
+        let imagePreview = '';
+        if (data.imageUrl) {
+          imagePreview = `<img src="${data.imageUrl}" alt="Testimonial" class="w-24 h-24 object-cover rounded-lg">`;
+        } else {
+          imagePreview = '<div class="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">No Image</div>';
+        }
+        
         card.innerHTML = `
-          <div class="text-gray-800 text-base mb-2">"${data.text}"</div>
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="font-bold text-sm text-gray-900">${data.authorName},</span>
-              <span class="text-xs text-gray-500 ml-1">${data.authorTitle}</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex items-center space-x-1">
-                ${[...Array(5)].map((_, i) => `<svg class="w-5 h-5 ${i < (data.rating || 0) ? 'text-[#FFC107]' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20"><path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.197-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.049 9.393c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.966z'/></svg>`).join('')}
+          <div class="flex-shrink-0">${imagePreview}</div>
+          <div class="flex-1">
+            <div class="text-sm text-gray-500 mb-1">Slot ${data.slotNumber || 'N/A'}</div>
+            <div class="text-gray-800 text-base mb-2 font-medium">"${data.text || ''}"</div>
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="font-bold text-sm text-gray-900">${data.authorName || 'N/A'},</span>
+                <span class="text-xs text-gray-500 ml-1">${data.authorTitle || 'N/A'}</span>
               </div>
-              <span class="bg-[#21C97B] text-white text-xs font-semibold px-3 py-1 rounded-full ml-2">${data.monthlyRevenue || ''}</span>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center space-x-1">
+                  ${[...Array(5)].map((_, i) => `<svg class="w-4 h-4 ${i < (data.rating || 0) ? 'text-[#FFC107]' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20"><path d='M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.966a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.175 0l-3.38 2.455c-.784.57-1.838-.197-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.049 9.393c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.966z'/></svg>`).join('')}
+                </div>
+                <span class="bg-[#21C97B] text-white text-xs font-semibold px-3 py-1 rounded-full">${data.monthlyRevenue || 'N/A'}</span>
+              </div>
             </div>
           </div>
         `;
@@ -737,10 +771,12 @@
         editBtn.title = 'Edit';
         editBtn.innerHTML = `<svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9" stroke="currentColor" stroke-linecap="round"/><path d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
         editBtn.onclick = () => {
-          showEditModal(testimonialId, data, async (newData) => {
-            await setDoc(doc(db, 'testimonials', testimonialId), newData, { merge: true });
-            renderTestimonials();
-          });
+          // Load this testimonial into the form for editing
+          const slotNum = data.slotNumber || parseInt(testimonialId.replace('slot-', ''));
+          activeTestimonialSlot = slotNum;
+          renderTestimonialPagination();
+          loadTestimonialSlot(slotNum);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         };
         const deleteBtn = document.createElement('button');
         deleteBtn.type = 'button';
@@ -749,9 +785,9 @@
         deleteBtn.innerHTML = `<svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-linecap="round"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-linecap="round"/></svg>`;
         deleteBtn.onclick = () => {
           showDeleteModal(testimonialId, async () => {
-            await setDoc(doc(db, 'testimonials', testimonialId), {}, { merge: false });
             await deleteDoc(doc(db, 'testimonials', testimonialId));
             renderTestimonials();
+            loadTestimonialSlot(activeTestimonialSlot);
           });
         };
         btns.appendChild(editBtn);
