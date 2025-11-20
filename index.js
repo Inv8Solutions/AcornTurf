@@ -85,7 +85,7 @@ async function loadTestimonials() {
           <div class="flex items-center justify-start space-x-1">
             ${starsHTML}
           </div>
-          <p class="mt-3 text-sm text-gray-700">
+          <p class="mt-3 text-sm text-gray-700 italic">
             "${data.text || ''}"
           </p>
           <div class="mt-4">
