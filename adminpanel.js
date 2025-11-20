@@ -84,74 +84,6 @@
 
     // Hero Section
     
-    let heroImageFile = null;
-    const heroUploadBtn = document.getElementById('heroupload');
-    if (heroUploadBtn) {
-      const fileInput = document.createElement('input');
-      fileInput.type = 'file';
-      fileInput.accept = 'image/*';
-      fileInput.style.display = 'none';
-      document.body.appendChild(fileInput);
-
-      heroUploadBtn.addEventListener('click', () => {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          heroImageFile = file;
-          updateHeroUploadUI(file.name);
-        }
-      });
-    }
-
-    const heroUploadDrag = document.getElementById('herouploaddrag');
-    if (heroUploadDrag) {
-      heroUploadDrag.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        heroUploadDrag.style.border = '2px dashed #4CAF50';
-        heroUploadDrag.style.background = '#f0fff0';
-      });
-
-      heroUploadDrag.addEventListener('dragleave', (e) => {
-        e.preventDefault();
-        heroUploadDrag.style.border = '';
-        heroUploadDrag.style.background = '';
-      });
-
-      heroUploadDrag.addEventListener('drop', (e) => {
-        e.preventDefault();
-        heroUploadDrag.style.border = '';
-        heroUploadDrag.style.background = '';
-        const file = e.dataTransfer.files[0];
-        if (file && file.type.startsWith('image/')) {
-          heroImageFile = file;
-          updateHeroUploadUI(file.name);
-        } else {
-          alert('Please drop a valid image file.');
-        }
-      });
-    }
-
-    function updateHeroUploadUI(filename) {
-      if (heroUploadDrag) {
-        heroUploadDrag.innerHTML = '';
-        const nameDiv = document.createElement('div');
-        nameDiv.className = 'text-gray-700 text-base mb-2';
-        nameDiv.textContent = filename;
-        heroUploadDrag.appendChild(nameDiv);
-        const selectBtn = document.createElement('button');
-        selectBtn.type = 'button';
-        selectBtn.className = 'mt-2 px-3 py-1 bg-white border border-gray-300 rounded text-[#21C97B] text-sm font-medium shadow';
-        selectBtn.textContent = 'Select another file';
-        selectBtn.onclick = function() {
-          if (heroUploadBtn) heroUploadBtn.click();
-        };
-        heroUploadDrag.appendChild(selectBtn);
-      }
-    }
-
     const heroForm = document.getElementById('heroform');
     if (heroForm) {
       // Create loader element
@@ -163,17 +95,11 @@
         e.preventDefault();
         const headline = document.getElementById('headline').value.trim();
         const subtext = document.getElementById('subtext').value.trim();
-        if (!headline || !subtext || !heroImageFile) {
-          alert('Please fill in all fields and select an image.');
+        if (!headline || !subtext) {
+          alert('Please fill in all fields.');
           return;
         }
         document.body.appendChild(loader);
-        let imageUrl = '';
-        if (heroImageFile) {
-          const storageRef = ref(storage, 'heroImages/' + Date.now() + '_' + heroImageFile.name);
-          await uploadBytes(storageRef, heroImageFile);
-          imageUrl = await getDownloadURL(storageRef);
-        }
         // Get the first doc in heroSection, or create one if none exists
         const heroSectionSnap = await getDocs(collection(db, "heroSection"));
         let docId;
@@ -184,8 +110,7 @@
         }
         await setDoc(doc(db, "heroSection", docId), {
           headline,
-          subtext,
-          imageUrl
+          subtext
         });
         document.body.removeChild(loader);
         alert('Hero Section saved!');

@@ -192,8 +192,8 @@
           <!-- Headline -->
           <h1 id="headline" class="text-[42px] sm:text-[52px] md:text-[64px] lg:text-[72px] font-bold text-white leading-[1.1]" data-aos="fade-right" data-aos-delay="100">
             Launch Your<br />
-            Amazon Brand<br />
-            in <span class="text-[#2ECC71]">90 Days</span>
+            Amazon Brand
+            <br />in <span class="text-[#2ECC71]">90 Days</span>
           </h1>
 
           <!-- Subtext -->
@@ -307,7 +307,7 @@
         if (headlineEl && data.headline) {
           // allow newlines saved from admin to render as <br>
           // preserve the green "90 Days" span styling
-          let updatedHeadline = data.headline.replace(/\n/g, '<br/>');
+          let updatedHeadline = data.headline.replace(<br/>,/\n/g);
           updatedHeadline = updatedHeadline.replace(/90 Days/g, '<span class="text-[#2ECC71]">90 Days</span>');
           headlineEl.innerHTML = updatedHeadline;
         }
